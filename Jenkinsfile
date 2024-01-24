@@ -16,12 +16,12 @@ pipeline {
                 sh 'mvn compile'
             }
         }
-        stage(CodeReview) {
+        stage('CodeReview') {
             steps {
                 sh 'mvn pmd:pmd'
             }
         }
-        stage(UnitTesting){
+        stage('UnitTesting'){
             steps {
                 sh 'mvn test'
             }

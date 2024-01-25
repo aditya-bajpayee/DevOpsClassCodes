@@ -35,13 +35,6 @@ pipeline {
             steps {
                sh 'mvn package'
             }
-	    post {
-        	success {
-                      sshagent(['f8407f6e-29bd-422e-a339-1ce0ce705eef']) {
-		          sh 'scp /var/lib/jenkins/workspace/addressBoo Pipeline Project/target/addressBook.war ubuntu@54.227.203.231:/home/ubuntu/tomcat/webapps '
-	                        }
-                 }
-              }
         }
     }
 }
